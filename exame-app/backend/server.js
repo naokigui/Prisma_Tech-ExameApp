@@ -15,11 +15,9 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: function(origin, callback) {
-    callback(null, true);
-  },
+  origin: "*",
   methods: ["GET", "POST"],
-  credentials: true,
+  credentials: false,
 }));
 
 // ── Rate limiting ─────────────────────────────────────────────
