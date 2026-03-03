@@ -65,14 +65,13 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error,   setError]   = useState("");
 
-  // Debounced search
   const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
     const t = setTimeout(() => { setSearch(searchInput); setPage(1); }, 400);
     return () => clearTimeout(t);
   }, [searchInput]);
 
-  const fetchData = useCallback(async () => {
+const fetchData = useCallback(async () => {
     const token = getToken();
     if (!token) { router.push("/admin"); return; }
     setLoading(true); setError("");
@@ -92,7 +91,8 @@ export default function DashboardPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, search, sort, dir, getToken, router]);
+
+  }, [page, search, sort, dir]);
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
@@ -109,10 +109,12 @@ export default function DashboardPage() {
   }
 
   function formatDate(iso: string) {
-    return new Date(iso).toLocaleDateString("pt-BR", {
-      day: "2-digit", month: "2-digit", year: "numeric",
-    });
-  }
+    if (!iso) return "—";
+    const part = iso.split("T")[0];
+    const [year, month, day] = part.split("-");
+    if (!year || !month || !day) return "—";
+    return `${day}/${month}/${year}`;
+}
   function formatDateTime(iso: string) {
     return new Date(iso).toLocaleString("pt-BR", {
       day: "2-digit", month: "2-digit", year: "numeric",
