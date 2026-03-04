@@ -75,7 +75,7 @@ export default function HeroSection() {
 
             {/* Cards */}
             {[
-              { icon: "🩸", name: "Hemograma Completo", date: "15 jan 2025", badge: "Normal", badgeColor: "bg-green-100 text-green-700" },
+              { icon: "🩸", name: "Hemograma Completo", date: "15 jan 2026", badge: "Normal", badgeColor: "bg-green-100 text-green-700" },
               { icon: "🫀", name: "ECG Repouso",        date: "02 mar 2025", badge: "Normal", badgeColor: "bg-green-100 text-green-700" },
               { icon: "💉", name: "Vacina COVID-19",    date: "20 abr 2025", badge: "Novo",   badgeColor: "bg-primary-lighter text-primary-darker" },
             ].map((card, i) => (

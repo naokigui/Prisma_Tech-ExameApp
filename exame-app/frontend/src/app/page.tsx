@@ -18,7 +18,7 @@ export default function Home() {
                         flex flex-wrap items-center justify-center gap-3 text-sm text-c-secondary">
           <span><strong className="text-c-title">+2.400 pessoas</strong> já na lista de espera</span>
           <span className="w-1 h-1 rounded-full bg-c-border hidden sm:block" />
-          <span>Lançamento previsto para <strong className="text-c-title">2025</strong></span>
+          <span>Lançamento previsto para <strong className="text-c-title">2026</strong></span>
           <span className="w-1 h-1 rounded-full bg-c-border hidden sm:block" />
           <span>100% gratuito no acesso antecipado</span>
         </div>

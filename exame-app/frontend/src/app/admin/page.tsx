@@ -5,6 +5,9 @@ import { useRouter }    from "next/navigation";
 import { adminLogin }   from "@/lib/api";
 import { Loader2, Eye, EyeOff } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
+import logoImg from "../logo.png";
+import Link from "next/link";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -46,15 +49,26 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm">
         {/* Card */}
         <div className="bg-white rounded-3xl p-10 shadow-[0_20px_60px_rgba(0,0,0,.1)] border border-border-light">
-          {/* Logo */}
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-primary-sm">
-              <svg className="w-5 h-5 fill-white" viewBox="0 0 16 16">
-                <path d="M8 0L5.6 5.6H0L4.8 9l-2 6L8 11.6 13.2 15l-2-6L16 5.6h-5.6z" />
-              </svg>
-            </div>
-            <span className="font-display font-extrabold text-xl text-c-title">Exame App</span>
-          </div>
+        {/* Logo */}
+        <div className="flex flex-col items-center justify-center gap-3 mb-2">
+          <Link 
+            href="/" 
+            className="flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            <Image
+              src={logoImg}
+              alt="Exame App Logo"
+              width={56}
+              height={56}
+              style={{ width: 'auto', height: 'auto' }}
+              className="rounded-xl shadow-sm"
+              priority
+            />
+          </Link>
+          <span className="font-display font-extrabold text-xl text-c-title">
+            Exame App
+          </span>
+        </div>
           <p className="text-center text-c-secondary text-sm mb-8">
             Acesso ao painel administrativo
           </p>

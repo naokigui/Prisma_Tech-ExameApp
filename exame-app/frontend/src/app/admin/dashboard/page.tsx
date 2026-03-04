@@ -9,6 +9,8 @@ import {
   Users, CalendarDays, TrendingUp, Loader2,
 } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
+import logoImg from "../../logo.png";
 
 type SortKey = "nome" | "email" | "telefone" | "nascimento" | "criado_em";
 type SortDir = "asc" | "desc";
@@ -131,21 +133,25 @@ const fetchData = useCallback(async () => {
 
   return (
     <div className="min-h-screen bg-off-white">
-      {/* Top nav */}
       <nav className="bg-white border-b border-border-light px-6 md:px-10 py-4
-                      flex items-center justify-between sticky top-0 z-10">
+                flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-3 font-display font-extrabold text-lg text-c-title">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-primary-sm">
-            <svg className="w-4 h-4 fill-white" viewBox="0 0 16 16">
-              <path d="M8 0L5.6 5.6H0L4.8 9l-2 6L8 11.6 13.2 15l-2-6L16 5.6h-5.6z" />
-            </svg>
+          <div className="flex items-center justify-center">
+            <Image
+              src={logoImg}
+              alt="Exame App Logo"
+              width={48}
+              height={48}
+              className="rounded-lg"
+              priority
+            />
           </div>
-          Exame App
-          <span className="bg-primary-lighter text-primary-darker text-xs font-semibold
-                           px-2.5 py-0.5 rounded-full ml-1">
-            Admin
-          </span>
-        </div>
+        Exame App
+    <span className="bg-primary-lighter text-primary-darker text-xs font-semibold
+                      px-2.5 py-0.5 rounded-full ml-1">
+      Admin
+    </span>
+  </div>
         <button
           onClick={logout}
           className="flex items-center gap-2 text-c-secondary text-sm

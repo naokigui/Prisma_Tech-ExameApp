@@ -36,7 +36,7 @@ export default function WaitlistSection() {
             {[
               { num: "+2.4k", lbl: "na lista de espera" },
               { num: "100%",  lbl: "gratuito no acesso" },
-              { num: "2025",  lbl: "previsão de lançamento" },
+              { num: "2026",  lbl: "previsão de lançamento" },
             ].map((s, i) => (
               <div key={i}>
                 <p className="font-display font-extrabold text-2xl text-primary">{s.num}</p>
